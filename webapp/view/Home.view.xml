@@ -1,0 +1,8 @@
+<mvc:View controllerName="main.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="homePage" title="{i18n>title}">
+        <content />
+        <Button id="link" text="Pokaz dane" press="onNavToTable" type="Emphasized" />
+    </Page>
+</mvc:View>

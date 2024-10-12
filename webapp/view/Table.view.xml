@@ -1,0 +1,62 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="main.controller.Table">
+    <Page id="tablePage" title="Tabela">
+        <content>
+            <Table id="table" items="{/Customers}">
+                <headerToolbar>
+                    <OverflowToolbar id="tableToolBar">
+                        <Title id="tableTitle" text="Klienci" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="CompanyNameCol">
+                        <VBox id="_IDGenVBox1">
+                            <Text id="CompanyName" text="Nazwa firmy" />
+                            <HBox id="_IDGenVBox2">
+                                <Button
+                                    id="sortButton"
+                                    press="onSort"
+                                    icon="sap-icon://sort" />
+                                <Button id="resetButton" press="onResetSort" icon="sap-icon://reset" />
+                            </HBox>
+                        </VBox>
+                    </Column>
+                    <Column id="addressCol">
+                        <Text id="address" text="Adres" />
+                    </Column>
+                    <Column id="cityCol">
+                        <VBox id="_IDGenVBox">
+                            <Text id="city" text="Miasto" />
+                            <SearchField
+                                id="search"
+                                width="100%"
+                                value="{city}"
+                                search="onSearch"
+                                placeholder="Miasto..."
+                            />
+                        </VBox>
+                    </Column>
+                    <Column id="postalCodeCol">
+                        <Text id="postalCode" text="Kod pocztowy" />
+                    </Column>
+                    <Column id="phoneCol">
+                        <Text id="phone" text="Numer telefonu" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="ColList">
+                        <cells>
+                            <Text id="companyNameItem" text="{CompanyName}" />
+                            <Text id="addressItem" text="{Address}" />
+                            <Text id="cityItem" text="{City}" />
+                            <Text id="postalCodeItem" text="{PostalCode}" />
+                            <ObjectNumber id="phoneItem" number="{Phone}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
